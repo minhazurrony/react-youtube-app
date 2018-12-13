@@ -7,7 +7,7 @@ const VideoListItem = (props) =>{
         <li className='media mb-3'>
             <img src={imgUrl} className='mr-3' alt="video-thumbnail"/>
             <div className="media-body">
-                {video.snippet.title}
+                <p>{video.snippet.title}</p>
             </div>
         </li>
     );
