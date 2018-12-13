@@ -26,9 +26,23 @@ constructor(props){
     console.log(this.state.videos)
     return (
       <div className="container">
-        <SearchBar />
-        <VideoDetail video={this.state.videos[0]}/>
-        <VideoList videos={this.state.videos}/>
+        <div className="row">
+          <div className="col-md-12">
+            <SearchBar />
+          </div>
+        </div>
+        
+
+        <div className="row">
+          <div className="col-md-8">
+            <VideoDetail video={this.state.videos[0]}/>
+          </div>
+          <div className="col-md-4">
+            <VideoList videos={this.state.videos}/>
+          </div>
+        </div>
+        
+       
       </div>
     );
   }

@@ -10,9 +10,7 @@ class SearchBar extends Component{
     }
     render(){
         return(
-            <div className='container'>
-                <input type='text' className='form-control mb-5' value={this.state.term} onChange={this.handleChange}/>
-            </div>
+            <input type='text' className='form-control mb-5' value={this.state.term} onChange={this.handleChange}/>
         );
     }
 }

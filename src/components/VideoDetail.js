@@ -9,9 +9,9 @@ const VideoDetail = (props) => {
     const url = `https://www.youtube.com/embed/${videoId}`;
 
     return(
-        <div className="container col-md-6">
+        <div>
             <div className="embed-responsive embed-responsive-16by9">
-                <iframe className="embed-responsive-item" src={url}></iframe>
+                <iframe className="embed-responsive-item" src={url} title="YouTube iframe"></iframe>
             </div>
             <div>
                 <div>{video.snippet.title}</div>

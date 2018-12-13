@@ -6,12 +6,9 @@ const VideoList = (props) =>{
         return <VideoListItem video={video} key={video.etag}/>
     })
     return(
-        <div className="container">
-            <ul className='list-unstyled'>
-                {VideoListItems}
-            </ul>
-        </div>
-        
+        <ul className='list-unstyled'>
+            {VideoListItems}
+        </ul>
     );
 }
 
