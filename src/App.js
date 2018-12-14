@@ -14,16 +14,22 @@ class App extends Component {
 constructor(props){
   super(props);
   this.state = {
-    videos: []
+    videos: [],
+    selectedVideo: null
   }
 
-  YTSearch({ key: API_KEY, term: 'luis fonsi'}, (videos) =>{
-    this.setState({videos});
+  YTSearch({ key: API_KEY, term: 'luis fonsi'}, (videos) => {
+    this.setState({
+      videos: videos,
+      selectedVideo: videos[0]     
+    });
   });
 }
+
+handleSelectedVideo = (selectedVideo) => { this.setState({ selectedVideo: selectedVideo})}
   
   render() {
-    console.log(this.state.videos)
+    //console.log(this.state.videos)
     return (
       <div className="container">
         <div className="row">
@@ -35,10 +41,10 @@ constructor(props){
 
         <div className="row">
           <div className="col-md-8">
-            <VideoDetail video={this.state.videos[0]}/>
+            <VideoDetail video={this.state.selectedVideo}/>
           </div>
           <div className="col-md-4">
-            <VideoList videos={this.state.videos}/>
+            <VideoList videos={this.state.videos} onSelectedVideo={this.handleSelectedVideo}/>
           </div>
         </div>
         
