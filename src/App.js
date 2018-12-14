@@ -4,6 +4,8 @@ import YTSearch from "youtube-api-search";
 import SearchBar from "./components/SearchBar";
 import VideoList from "./components/VideoList";
 import VideoDetail from './components/VideoDetail';
+import './style.css';
+
 
 
 const API_KEY = 'AIzaSyAOqdn1U5rGbBXs7WRDYCagIoPxv0nj-JQ';
@@ -18,7 +20,7 @@ constructor(props){
     selectedVideo: null
   }
 
-  this.videoSearch('messi');
+  this.videoSearch('luis fonsi');
   
 }
 
@@ -35,8 +37,17 @@ handleSelectedVideo = (selectedVideo) => { this.setState({ selectedVideo: select
   
   render() {
     const videoSearch = _.debounce((term) => {this.videoSearch(term)},300);
+
+    const mainHeading = {
+      textAlign: 'center',
+      backgroundColor: 'red',
+      color: 'white',
+      padding: '10px',
+      margin: 0
+    }
     return (
       <div className="container">
+        <h1 style={mainHeading}>React YouTube App</h1>
         <div className="row">
           <div className="col-md-12">
             <SearchBar onSerachTermChange={videoSearch}/>
