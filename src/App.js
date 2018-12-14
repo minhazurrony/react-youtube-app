@@ -18,7 +18,12 @@ constructor(props){
     selectedVideo: null
   }
 
-  YTSearch({ key: API_KEY, term: 'luis fonsi'}, (videos) => {
+  this.videoSearch('messi');
+  
+}
+
+videoSearch(term){
+  YTSearch({ key: API_KEY, term: term}, (videos) => {
     this.setState({
       videos: videos,
       selectedVideo: videos[0]     
@@ -34,7 +39,7 @@ handleSelectedVideo = (selectedVideo) => { this.setState({ selectedVideo: select
       <div className="container">
         <div className="row">
           <div className="col-md-12">
-            <SearchBar />
+            <SearchBar onSerachTermChange={(term) => {this.videoSearch(term)}}/>
           </div>
         </div>
         
