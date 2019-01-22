@@ -1,6 +1,6 @@
 # react-youtube-app
 
-![Screenshot](screen-shot.PNG)
+![Screenshot](screen-shot.png)
 
 **live sample of this app:** [react-youtube-app](https://reactjs-youtube-app.netlify.com/)
 
